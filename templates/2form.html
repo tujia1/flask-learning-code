@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import form_field %}
+
+{% block content %}
+<h1>
+    Multiple Form in One Page with One View
+</h1>
+
+<h3>Login Form</h3>
+<form method="post">
+    {{ sign_form.csrf_token }}
+    {{ form_field(sign_form.username) }}
+    {{ form_field(sign_form.password) }}
+    {{ sign_form.submit }}
+</form>
+<h3>Register Form</h3>
+<form method="post">
+    {{ register_form.csrf_token }}
+    {{ form_field(register_form.username) }}
+    {{ form_field(register_form.email) }}
+    {{ form_field(register_form.password) }}
+    {{ register_form.submit2 }}
+</form>
+{% endblock %}
